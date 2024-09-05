@@ -13,6 +13,12 @@ const Layout = () => {
                             <ul className="navbar-nav ms-auto">
                                 <li className="nav-item"><Link to="/" className="nav-link active">Home</Link></li>
                             </ul>
+                            <ul className="navbar-nav ms-auto">
+                                <li className="nav-item"><Link to="#" className="nav-link active">Create</Link></li>
+                            </ul>
+                            <ul className="navbar-nav ms-auto">
+                                <li className="nav-item"><Link to="#" className="nav-link active">My Goals</Link></li>
+                            </ul>
                         </div>
                     </div>
                 </div>

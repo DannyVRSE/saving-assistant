@@ -4,6 +4,6 @@ const {createPlan, getPlans} = planController;
 const router = express.Router();
 
 router.post('/', createPlan);
-router.get('/:id', getPlans);
+router.get('/', getPlans);
 
 export default router;
