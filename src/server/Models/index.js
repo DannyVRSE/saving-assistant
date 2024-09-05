@@ -33,8 +33,14 @@ db.sequelize=sequelize;
 db.User=userModel(sequelize,DataTypes);
 db.FinancialPlan=financialPlanModel(sequelize,DataTypes);
 //association
-//one to many
-db.User.hasMany(db.FinancialPlan);
+//one to many association berween user and financial plan
+db.User.hasMany(db.FinancialPlan, {
+    foreignKey: {
+        name: 'userId',
+        allowNull: false,
+    },
+    onDelete: 'CASCADE',
+});
 db.FinancialPlan.belongsTo(db.User);
 
 export default {db, sequelize};

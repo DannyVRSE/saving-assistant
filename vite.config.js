@@ -11,7 +11,7 @@ export default defineConfig({
     manifest: {
       name: 'NestEgg',
       short_name: 'NestEgg',
-      description: 'Track your savings plan',
+      description: 'Track your financial plans',
       theme_color: '#ffffff',
 
       icons: [{
