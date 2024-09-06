@@ -1,9 +1,8 @@
 import { db } from "../Models/db";
 import axios from "axios";
 
-const plans = await db.unSynced.toArray();
-
 const syncPlans = async () => {
+    const plans = await db.unSynced.toArray();
     for (const plan of plans) {
         try {
             await axios.post("/api/v1/plans/", {
