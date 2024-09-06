@@ -16,7 +16,7 @@ const populateLocalDB = async () => {
 
     await fetchPlans();
 
-    //add to indexedDB
+    //add to indexedDB local database
     for (const plan of plans) {
         try {
             await db.synced.add({

@@ -27,8 +27,8 @@ export default defineConfig({
         sizes: '512x512',
         type: 'image/png',
       }, {
-        src: 'maskable-icon-512x512.png',
-        sizes: '512x512',
+        src: 'maskable-icon.png',
+        sizes: '396x396',
         type: 'image/png',
         purpose: 'maskable',
       }],
@@ -38,6 +38,11 @@ export default defineConfig({
       globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
       cleanupOutdatedCaches: true,
       clientsClaim: true,
+      navigateFallbackDenylist: [/^\/api/],
+      runtimeCaching:[{
+        urlPattern: /^\/api\//,
+      handler: 'NetworkOnly',
+      }]
     },
 
     devOptions: {

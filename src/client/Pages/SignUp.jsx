@@ -30,6 +30,7 @@ const SignUp = () => {
         .then((response)=>{
             const message =response.data.message;
             alert(message);
+            window.location.href = '/';
         })
         .catch((err)=>{
             const error = err.response.data.message;

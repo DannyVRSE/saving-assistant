@@ -36,7 +36,7 @@ app.use("/api/v1/users", userRoutes);
 passportAuth(passport);
 
 //sync db
-db.sequelize.sync({ force: false })
+db.sequelize.sync({ force: true })
     .then(() => {
         console.log("Database synced ...");
     })

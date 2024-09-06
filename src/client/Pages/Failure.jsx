@@ -12,7 +12,7 @@ const Failure = () => {
                                 <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
                             </svg>
                             <p className="card-text">Failed to log in! Please try again</p>
-                            <a className="btn btn-primary" onClick={()=>navigate("/login")} role="button">Login</a>
+                            <a className="btn btn-primary" onClick={()=>navigate("/")} role="button">Login</a>
                         </div>
                     </div>
 
