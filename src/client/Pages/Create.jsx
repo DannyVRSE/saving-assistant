@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import BackBtn from '../Components/BackBtn';
-import axios from 'axios';
+import createPlan from '../Models/createPlan';
 
 const Create = () => {
-
-  const [loading, setLoading] = useState(false);
-
   const [goals, setGoals] = useState([
     'Retirement',
     'Emergency Fund',
@@ -38,22 +35,8 @@ const Create = () => {
     setPlan(prevdata => ({ ...prevdata, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    console.log(plan);
-    e.preventDefault();
-    setLoading(true);
-    axios.post('/api/v1/plans', plan)
-      .then((response) => {
-        console.log(response.data);
-        alert('Plan created successfully');
-      })
-      .catch((error) => {
-        alert(`Error creating plan! Details: ${error.response.data.message}`);
-        console.log(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      })
+  const handleSubmit = async() => {
+    alert(await createPlan(plan));
   }
 
 

@@ -1,9 +1,7 @@
 import React from 'react'
-import BackBtn from './BackBtn';
-
 const Plan = (props) => {
 
-//find the duration of the plan
+    //find the duration of the plan
     const duration = (startDate, endDate) => {
         const start = new Date(startDate);
         const end = new Date(endDate);
@@ -17,8 +15,8 @@ const Plan = (props) => {
     const dailyAmount = props.targetAmount / days;
 
     return (
-        <div className="card w-100 mt-3 border-primary">
-            
+        <div className = {props.synced?"card w-100 mt-3 border-success":"card w-100 mt-3 border-warning"}>
+
             <div className="card-body">
 
                 <div>
@@ -27,10 +25,10 @@ const Plan = (props) => {
                     <h2>Financial Goals</h2>
 
                     {props.goals.map((goal, index) => (
-                        <ol key={index}>
+                        <ul key={index}>
                             <li>{goal}</li>
-                        </ol>
-                    ))}   
+                        </ul>
+                    ))}
                 </div>
 
                 <div>
@@ -42,13 +40,13 @@ const Plan = (props) => {
                     <p>End Date: {props.endDate.split("T")[0]}</p>
                     <p>Duration: {days} days</p>
                 </div>
-                
+
                 <div>
                     <h2>Saving Plan</h2>
                     <p>Daily: ${Math.floor(dailyAmount)} </p>
-                    <p>Weekly: ${Math.floor(dailyAmount*7)}</p>
-                    <p>Monthly: ${Math.floor(dailyAmount*30)} </p>
-                    <p>Annual: ${Math.floor(dailyAmount*365)}</p>
+                    <p>Weekly: ${Math.floor(dailyAmount * 7)}</p>
+                    <p>Monthly: ${Math.floor(dailyAmount * 30)} </p>
+                    <p>Annual: ${Math.floor(dailyAmount * 365)}</p>
                 </div>
             </div>
         </div>

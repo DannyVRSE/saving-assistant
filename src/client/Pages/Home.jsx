@@ -1,15 +1,23 @@
 import PWABadge from "../Components/PWABadge";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Hooks/AuthContext";
-import { useEffect} from "react";
+import { useEffect } from "react";
+import populateLocalDB from "../Models/populateLocalDB";
 
 const Home = () => {
   const navigate = useNavigate();
 
   const { user, loading, getUser } = useAuth();
 
+  //sync data with local
+
+
   useEffect(() => {
     getUser();
+    if (user) {
+      //populate local DB
+      populateLocalDB();
+    }
   }, []);
 
   return (
